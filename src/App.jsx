@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Todos from './components/Todos';
 
-function App() {
+const App = () => {
   const [todos, setTodos] = useState([
     {
-      id: 1,
+      id:1,
       title: 'Finish Progate React Course',
       completed: false,
     },
@@ -20,15 +20,26 @@ function App() {
     },
   ])
 
-  console.log(todos)
+ const toggleCompleted = (todoId) => {
+  const updateTodos = todos.map((todo) => {
+    if (todo.id === todoId) {
+      todo.completed = !todo.completed
+    }
+    return todo
+  })
+  setTodos(updateTodos)
+ }
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>My Todo List</h1>
-      <Todos todos={todos} />
+      <h1 style={styles.title}>Todo List</h1>
+      <Todos todos={todos} 
+        toggleCompleted={toggleCompleted}
+      />
     </div>
-  )
+  );
 }
+
 const styles = {
   container: {
     textAlign: 'center',
@@ -38,4 +49,4 @@ const styles = {
     fontSize: '36px',
   },
 }
-export default App
+export default App;
