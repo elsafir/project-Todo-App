@@ -43,11 +43,21 @@ const styles = {
     height: "66px",
     width: "40%",
     fontSize: "16px",
-    padding: "0 16px",
+    padding: "16px 16px",
+    border: "2px solid #FF1493", // Pink
+    borderRadius: "10px",
+    backgroundColor: "#F8F8FF", // Lavender
   },
   button: {
     height: "72px",
     fontSize: "16px",
+    borderRadius: "36px", // Rounded
+    backgroundColor: "#FF1493", // Pink
+    color: "#FFF", // White
+    border: "none",
+    cursor: "pointer",
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Shadow
+    transition: "background-color 0.3s", // Smooth transition
   },
 };
 
